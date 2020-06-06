@@ -1,0 +1,14 @@
+.user-page {
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.user-page-header {
+  margin-top: 5%;
+  padding: 1%;
+  font-size: 2em;
+  border: 1px solid bisque;
+  color: #9ec5ab;
+  background-color: #004643;
+}
