@@ -1,0 +1,25 @@
+.display-manager-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+  width: 80%;
+  margin-left: 3%;
+  border-top: 2px solid #32746d;
+  border-bottom: 2px solid #32746d;
+  }
+
+.info-container {
+  border: 2px solid bisque;
+  height: 12.5vh;
+  width: 30%;
+  margin: 1%;
+  background-color: #004643;
+}
+
+.info-title {
+  color: bisque;
+  font-size: 80%;
+  overflow-wrap: normal;
+}
