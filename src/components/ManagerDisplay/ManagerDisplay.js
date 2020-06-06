@@ -38,6 +38,13 @@ const ManagerDisplay = ({user, allUsers, allRooms, allBookings, date}) => {
     return number
   }
 
+  const findPercentOfAvailableRooms = () => {
+    let percent = ( findNumberOfRoomsAvailable() / allRooms.length) * 100;
+    let num = parseInt(percent)
+    num.toFixed(0)
+    return `${num}`
+  }
+
 return (
   <div className='display-manager-info'>
 
@@ -50,7 +57,7 @@ return (
     </div>
 
     <div className='info-container'>
-      <p className='info-title'>why?</p>
+<p className='info-title'>{`${findPercentOfAvailableRooms()}%`}</p>
     </div>
 
   </div>
