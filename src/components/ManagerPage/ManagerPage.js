@@ -4,12 +4,12 @@ import './ManagerPage.css'
 
 import ManagerDisplay from '../ManagerDisplay/ManagerDisplay'
 
-const ManagerPage = ( {user, allUsers, allRooms, allBookings}) => {
+const ManagerPage = ( {user, allUsers, allRooms, allBookings, date}) => {
 
   return (
     <div className='user-page'>
       {/* render the search by user form */}
-      <ManagerDisplay user={user} allUsers={allUsers} allRooms={allRooms} allBookings={allBookings} />
+      <ManagerDisplay user={user} allUsers={allUsers} allRooms={allRooms} allBookings={allBookings} date={date} />
     </div>
   )
   
