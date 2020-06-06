@@ -11,25 +11,25 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {},
+      user: {
+        userBookings: [],
+      },
       allUsers: [],
     }
   }
 
   getUser = (user) => {
-    console.log(user)
   if(user.name === 'manager') {
     this.setState({ user: user.name })
     this.setState({ allUsers: [...user.allUsers] })
   } else {
-    this.setState({ user: {id: user.id, name: user.name} })
+    this.setState({ user: {id: user.id, name: user.name, userBookings: []} })
     this.setState({ allUsers: [...user.allUsers] })
   }
   }
 
   render() {
-    console.log(this.state.allUsers)
-    console.log(this.state.user)
+console.log(this.state.user)
     return (
       <main className="App">
         <Switch >
