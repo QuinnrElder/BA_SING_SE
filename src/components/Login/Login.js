@@ -46,7 +46,7 @@ class Login extends React.Component {
   updateUser = () => {
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
-      this.props.getUser({name: 'manager', allUsers: this.state.allUsers})
+      this.props.getUser({id: 'manager', name: 'manager', allUsers: this.state.allUsers})
     } else {
       let currentUser = this.checkUserNameAndPassword()
         this.setState({ completedFormUser: true });
