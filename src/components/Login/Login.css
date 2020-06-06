@@ -1,0 +1,62 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../gate.jpg);
+  height: auto;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+.login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffe74c;
+  border-radius: 50% 50%;
+  background-color: #02182b;
+  height: 32vh;
+  width: 65vw;
+}
+
+.login-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-text {
+  color: #ffe74c;
+  font-size: 2em;
+  font-family: 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+}
+
+.username-input {
+  margin: 8% 5% 5% 5%;
+  width: 100%;
+  height: 4vh;
+  border: 1px solid #02182b;
+  text-align: center;
+}
+
+.password-input {
+  margin: 3%;
+  width: 100%;
+  height: 4vh;
+  border: 1px solid #02182b;
+  text-align: center;
+}
+
+.login-button {
+  width: 80%;
+  border: 1px solid #02182b;
+  height: 4.3vh;
+}
