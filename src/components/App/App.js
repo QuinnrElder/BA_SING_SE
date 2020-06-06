@@ -11,26 +11,25 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      manager: '',
       user: {},
+      allUsers: [],
     }
   }
 
   getUser = (user) => {
-  if(user === 'manager') {
-    this.setState({ manager: user })
-    this.setState({ user: {} })
+    console.log(user)
+  if(user.name === 'manager') {
+    this.setState({ user: user.name })
+    this.setState({ allUsers: [...user.allUsers] })
   } else {
-    this.setState({ user: user })
-    this.setState({ manager: '' })
+    this.setState({ user: {id: user.id, name: user.name} })
+    this.setState({ allUsers: [...user.allUsers] })
   }
   }
 
   render() {
-    console.log(this.state.manager)
+    console.log(this.state.allUsers)
     console.log(this.state.user)
-    
-    
     return (
       <main className="App">
         <Switch >
@@ -40,8 +39,7 @@ class App extends React.Component {
             render={() => {
               return (
               <div className='mainImage'>
-                {/* render the search by user form */}
-                <ManagerPage />
+                <ManagerPage user={this.state.user} allUsers={this.state.allUsers}/>
               </div>
               )
           }}
