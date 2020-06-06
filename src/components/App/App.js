@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Route, Switch } from "react-router-dom";
-import { fetchBookings, fetchRooms, fetchUserBookings } from '../ApiFetchMethods/ApiFetchMethods'
+import { fetchBookings, fetchRooms} from '../ApiFetchMethods/ApiFetchMethods'
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -61,7 +61,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.user)
     return (
       <main className="App">
         <Switch >
