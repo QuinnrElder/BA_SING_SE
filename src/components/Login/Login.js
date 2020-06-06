@@ -15,7 +15,8 @@ class Login extends React.Component {
       password: '',
       userNameError: false,
       userPasswordError: false,
-      completedForm: false,
+      completedFormManager: false,
+      completedFormUser: false,
     }
   }
 
@@ -50,28 +51,22 @@ class Login extends React.Component {
   }
 
   updateUser = () => {
-    if (
-      this.state.userName !== "" &&
-      this.state.password !== ""
-    ) {
-      this.setState({ completedForm: true });
-      
-      if (this.state.userName === "manager" && this.state.password === "overlook2020") {
-        // pass up the string of manager to app as prop
-        this.props.getUser('manager')
-        return <Redirect to='/manager' />;
-      } else {
-        let currentUser = this.checkUserNameAndPassword()
-        // pass up the object of user to app as prop
+   
+    
+    
+    if (this.state.userName === "manager" && this.state.password === "overlook2020") {
+      this.setState({ completedFormManager: true });
+      this.props.getUser('manager')
+    } else {
+      let currentUser = this.checkUserNameAndPassword()
+        this.setState({ completedFormUser: true });
         this.props.getUser(currentUser)
-        return <Redirect to={`/${currentUser.name}`} />;
       }
-    }
+    
   }
 
   checkUserNameAndPassword = () => {
     let passwordId = this.checkPasswordLetters()
-    console.log('password id', passwordId)
     return this.checkPassword(passwordId)
   }
 
@@ -112,40 +107,46 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form className="login-form">
-
-            <label htmlFor="userName">userName</label>
+      <div className='login-container'>
+      { this.state.completedFormManager && <Redirect to='/manager' />}
+        <div className='login-form-container'>
+          <form className='login-form'>
+          <label className='welcome-text'>Welcome</label>
             <input
-              type="text"
-              name="userName"
-              id="userName"
-              placeholder="name"
-              value={this.state.userName}
-              onChange={this.handleChange}
+                className='username-input'
+                type="text"
+                name="userName"
+                id="userName"
+                placeholder="username"
+                value={this.state.userName}
+                onChange={this.handleChange}
             />
-            {this.state.userNameError && (
-              <p className="error-message">Please check your username.</p>
-            )}
+              {this.state.userNameError && (
+                <p className="error-message">Please check your username.</p>
+              )}
 
-            <label htmlFor="userEmail">password</label>
             <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleChange}
+                className='password-input'
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}
             />
-            {this.state.userPasswordError && (
-              <p className="error-message">Please check your password.</p>
-            )}
+              {this.state.userPasswordError && (
+                <p className="error-message">Please check your password.</p>
+              )}
 
             <button
-              className="login-button"
-              type="submit"
-              onClick={(event) => this.checkForErrors(event)}
+                className="login-button"
+                type="submit"
+                onClick={(event) => this.checkForErrors(event)}
             >Login</button>
           </form>
+        </div>
+        { this.state.completedFormUser && <Redirect to={`/user/${this.state.userName}`} />}
+      </div>
     )
   }
 }
