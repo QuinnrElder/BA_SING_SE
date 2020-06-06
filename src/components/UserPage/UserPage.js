@@ -2,7 +2,7 @@ import React from 'react'
 import './UserPage.css'
 // import PropTypes from 'prop-types'
 
-import { fetchUserBookings } from '../ApiFetchMethods/ApiFetchMethods'
+// import { fetchUserBookings } from '../ApiFetchMethods/ApiFetchMethods'
 import DisplayInfo from '../DisplayInfo/DisplayInfo'
 
 class UserPage extends React.Component {
@@ -13,10 +13,10 @@ class UserPage extends React.Component {
     }
   }
 
-  componentDidMount = async () => {
-    const userBookings = await fetchUserBookings(this.state.user)
-    this.setState({ user: {...this.state.user, userBookings: userBookings }})
-  }
+  // componentDidMount = async () => {
+  //   const userBookings = await fetchUserBookings(this.state.user)
+  //   this.setState({ user: {...this.state.user, userBookings: userBookings }})
+  // }
 
   render() {
     return (
