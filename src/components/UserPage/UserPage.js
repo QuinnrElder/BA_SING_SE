@@ -1,10 +1,11 @@
 import React from 'react'
+import './UserPage.css'
 
 const UserPage = ({ user }) => {
 
   return (
-    <div>
-      <h1 >{`Welcome ${user.name}` }</h1>
+    <div className='user-page' >
+      <h3 className='user-page-header'>{`Welcome ${user.name}` }</h3>
     </div>
   )
 }
