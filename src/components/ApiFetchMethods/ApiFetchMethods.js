@@ -18,3 +18,9 @@ export const fetchUserBookings = async (user) => {
   const usersApiData = await promise.json()
   return usersApiData.bookings.filter(booking => booking.userID === user.id)
 }
+
+export const fetchRooms = async () => {
+  const promise = await fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
+  const usersApiData = await promise.json()
+  return usersApiData.rooms
+}
