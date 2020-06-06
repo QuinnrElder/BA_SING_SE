@@ -1,33 +1,18 @@
 import React from 'react'
-import './Manager.css'
+import './ManagerPage.css'
 // import PropTypes from 'prop-types'
 
-import { fetchBookings } from '../ApiFetchMethods/ApiFetchMethods'
+import ManagerDisplay from '../ManagerDisplay/ManagerDisplay'
 
-import DisplayInfo from '../DisplayInfo/DisplayInfo';
+const ManagerPage = ( {user, allUsers, allRooms, allBookings}) => {
 
-class ManagerPage extends React.Component {
-constructor(props) {
-  super(props)
-  this.state = {
-    name: 'manager',
-    allBookings: [],
-  }
-}
-
-componentDidMount = async () => {
-  const bookings = await fetchBookings()
-  this.setState({ allBookings: bookings })
-}
-
-  render() {
   return (
-    <div >
+    <div className='user-page'>
       {/* render the search by user form */}
-      <DisplayInfo />
+      <ManagerDisplay user={user} allUsers={allUsers} allRooms={allRooms} allBookings={allBookings} />
     </div>
   )
-  }
+  
 }
 
 export default ManagerPage
