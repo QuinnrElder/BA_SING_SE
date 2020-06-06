@@ -3,6 +3,7 @@ import './DisplayInfo.css'
 // import PropTypes from 'prop-types'
 
 const DisplayInfo = ({ user }) => {
+  console.log(user)
   const displayBookings = () => {
     return user.userBookings.map(booking => {
       return (
@@ -15,13 +16,20 @@ const DisplayInfo = ({ user }) => {
     })
   }
 
-  // const findTotalSpent = () => {
-    
-  // }
+  const findTotalSpent = () => {
+    let number = user.roomsStayedIn.reduce((acc, room) => {
+      acc += room.costPerNight
+      return acc
+    }, 0)
+    return number.toFixed(2)
+  }
 
   return (
   <div className='display-info'>
-    <p className='bookings-title'><span>Total $</span>BOOKINGS</p>
+    <div className='bookings-title-container'>
+    <p className='bookings-cost'>{`Total $ ${findTotalSpent()}`}</p>
+    <p className='bookings-title'>BOOKINGS</p>
+    </div>
     <div className='display-info-container'>
       {displayBookings()}
     </div>
