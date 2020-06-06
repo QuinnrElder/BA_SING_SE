@@ -5,7 +5,6 @@ import { fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
 
 // import PropTypes from 'prop-types'
 
-
 class Login extends React.Component {
   constructor(props) {
     super(props)
@@ -33,36 +32,26 @@ class Login extends React.Component {
   //some method that checks to see if you've filled everything out
   checkForErrors = (event) => {
     event.preventDefault();
-
-    this.setState({
-      userNameError: false,
-      userPasswordError: false,
-    });
-
+    this.setState({ userNameError: false, userPasswordError: false})
+    
     if (!this.state.userName) {
       this.setState({ userNameError: true });
     }
-
     if (!this.state.password) {
       this.setState({ userPasswordError: true });
     }
-
     this.updateUser();
   }
 
   updateUser = () => {
-   
-    
-    
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
-      this.props.getUser('manager')
+      this.props.getUser({name: 'manager', allUsers: this.state.allUsers})
     } else {
       let currentUser = this.checkUserNameAndPassword()
         this.setState({ completedFormUser: true });
-        this.props.getUser(currentUser)
+        this.props.getUser({...currentUser, allUsers: this.state.allUsers})
       }
-    
   }
 
   checkUserNameAndPassword = () => {
@@ -150,5 +139,9 @@ class Login extends React.Component {
     )
   }
 }
+
+// Login.propTypes = {
+//   getUser: PropTypes.func
+// }
 
 export default Login
