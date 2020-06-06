@@ -32,7 +32,7 @@ class App extends React.Component {
 
   getUser = (user) => {
   if(user.name === 'manager') {
-    this.setState({ user: user.name })
+    this.setState({ user: { name:'manager', id: user.id, userBookings: [], roomsStayedIn: [] } })
     this.setState({ allUsers: [...user.allUsers] })
   } else {
     const userBookings = this.state.allBookings.filter(booking => booking.userID === user.id)
