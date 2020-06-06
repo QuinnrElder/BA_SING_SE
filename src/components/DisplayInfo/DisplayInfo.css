@@ -1,11 +1,10 @@
-.display-info {
+.display-user-info {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 30vh;
   width: 100%;
   margin-left: 3%;
-  float: bottom;
   }
 
 .display-info-container {
