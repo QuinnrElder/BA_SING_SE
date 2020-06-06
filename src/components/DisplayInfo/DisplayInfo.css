@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 25vh;
+  height: 30vh;
   width: 100%;
   margin-left: 3%;
   float: bottom;
@@ -15,17 +15,28 @@ flex-direction: row;
 height: 16vh;
 width: 80%;
 margin-left: 3%;
-float: bottom;
 border-top: 2px solid #32746d;
 border-bottom: 2px solid #32746d;
 overflow-x: scroll;
 }
 
+.bookings-title-container {
+  display: inline-flex;
+  flex-direction: row;
+  width: 80%;
+ }
+ 
+ .bookings-cost {
+   color: #004643;
+   font-size: 1.5em;
+   margin: 1% 7% 0 1%;
+ }
+
 .bookings-title {
   color: #004643;
-  padding: 1%;
   font-size: 2em;
 }
+
 
 .each-booking-container {
 border: 2px solid bisque;
