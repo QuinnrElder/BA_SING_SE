@@ -19,6 +19,7 @@ class App extends React.Component {
       allUsers: [],
       allBookings: [],
       allRooms: [],
+      date: new Date().toLocaleDateString(),
     }
   }
 
@@ -74,7 +75,8 @@ class App extends React.Component {
                 user={this.state.user}
                 allUsers={this.state.allUsers} 
                 allRooms={this.state.allRooms} 
-                allBookings={this.state.allBookings} 
+                allBookings={this.state.allBookings}
+                date={this.state.date} 
                 />
               </div>
               )
@@ -87,7 +89,9 @@ class App extends React.Component {
             render={() => {
               return (
                 <div className='mainImage'>
-                  <UserPage user={this.state.user} />
+                  <UserPage 
+                  user={this.state.user}
+                  date={this.state.date}  />
                 </div>
               ) 
           }}
