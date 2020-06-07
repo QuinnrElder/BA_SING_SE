@@ -1,8 +1,8 @@
-.user-page {
-display: flex;
+/* .user-page { */
+/* display: flex;
 align-items: center;
 flex-direction: column;
-}
+} */
 
 .user-page-header {
   margin-top: 5%;
@@ -11,4 +11,13 @@ flex-direction: column;
   border: 1px solid bisque;
   color: #9ec5ab;
   background-color: #004643;
+}
+
+.main-form-and-res-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 42vh;
+  width: 100%;
 }
