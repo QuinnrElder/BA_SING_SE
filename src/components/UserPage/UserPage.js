@@ -78,7 +78,7 @@ class UserPage extends React.Component {
  displayAvailableRoomsInfo = (availableRooms) => {
     return availableRooms.map(room => {
       return (
-        <AvailableRooms key={Math.floor(Math.random() * 10000000) + 1} room={room} />
+        <AvailableRooms key={Math.floor(Math.random() * 10000000) + 1} room={room} date={this.state.searchInput.date} user={this.state.user}/>
         ) 
     })
   }
