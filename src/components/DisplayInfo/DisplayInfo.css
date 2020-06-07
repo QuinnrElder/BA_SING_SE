@@ -8,15 +8,12 @@
   }
 
 .display-info-container {
-display: flex;
-align-items: flex-start;
-flex-direction: row;
-height: 16vh;
-width: 80%;
-margin-left: 3%;
-border-top: 2px solid #32746d;
-border-bottom: 2px solid #32746d;
-overflow-x: scroll;
+  display: flex;
+  height: 16vh;
+  width: 80%;
+  border-top: 2px solid #32746d;
+  border-bottom: 2px solid #32746d;
+  overflow-x: scroll;
 }
 
 .bookings-title-container {
