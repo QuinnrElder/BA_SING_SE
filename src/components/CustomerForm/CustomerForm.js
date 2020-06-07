@@ -24,7 +24,7 @@ class CustomerForm extends React.Component {
 
   render() {
   return (
-    <form className='form'>
+    <form className='formy'>
       <label className='room-label' >Check Room Availability</label>
       <p className='date-helper'>date format 'yyyy/mm/dd'</p>
       <input name='date' onChange={this.handleChange} className='input-name' type='text' placeholder='Search By Date'></input>

@@ -13,3 +13,12 @@
   align-items: center;
   flex-direction: column;
 }
+
+.main-form-and-res-containers {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 22vh;
+  width: 100%;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Route, Switch } from "react-router-dom";
-import { fetchBookings, fetchRooms} from '../ApiFetchMethods/ApiFetchMethods'
+import { fetchBookings, fetchRooms, } from '../ApiFetchMethods/ApiFetchMethods'
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -29,6 +29,7 @@ class App extends React.Component {
     
     const allRooms = await fetchRooms()
     this.setState({ allRooms: [...this.state.allRooms, ...allRooms] })
+
   }
 
   getUser = (user) => {
