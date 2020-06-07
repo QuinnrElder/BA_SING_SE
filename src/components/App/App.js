@@ -91,7 +91,10 @@ class App extends React.Component {
                 <div className='mainImage'>
                   <UserPage 
                   user={this.state.user}
-                  date={this.state.date}  />
+                  date={this.state.date}
+                  allRooms={this.state.allRooms}
+                  allBookings={this.state.allBookings}
+                   />
                 </div>
               ) 
           }}
