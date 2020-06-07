@@ -1,0 +1,32 @@
+.form {
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: space-around;
+border: 1px solid bisque;
+color: #9ec5ab;
+background-color: #004643;
+height: 90%;
+width: 48%;
+}
+
+.room-label {
+  font-size: 1.3em;
+}
+
+.date-helper {
+
+}
+
+.input-name {
+
+}
+
+.filter-label {
+
+}
+
+.submit-user-form {
+height: 3vh;
+width: 30%;
+}
