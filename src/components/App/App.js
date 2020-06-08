@@ -3,8 +3,6 @@ import './App.css';
 
 import { Route, Switch } from "react-router-dom";
 import { fetchBookings, fetchRooms, fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
-// import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
-
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
