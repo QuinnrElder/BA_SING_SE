@@ -3,7 +3,7 @@ import './DisplayInfo.css'
 // import PropTypes from 'prop-types'
 
 const DisplayInfo = ({ user }) => {
-
+  console.log(user)
   const displayBookings = () => {
     return user.userBookings.map(booking => {
       return (
