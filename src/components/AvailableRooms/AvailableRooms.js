@@ -2,18 +2,31 @@ import React from 'react'
 import './AvailableRooms.css'
 import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
 
-const AvailableRooms = ({room, date, user}) => {
+class AvailableRooms extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
 
+  handleEvent = () => {
+    console.log(this.props.date)
+    postBooking(this.props.room.number, this.props.date, this.props.user.id)
+    this.props.changeSearchedState()
+    this.props.updateTotalBookingCount()
+  }
+
+  render() {
   return (
     <section className="singleBooking"> 
-      <p className="booking-info">Room Number: {room.number}</p>
-      <p className="booking-info">Room Type: {room.roomType}</p>
-      <p className="booking-info">Has Bidet: {room.bidet}</p>
-      <p className="booking-info">Bed Size: {room.bedSize}</p>
-      <p className="booking-info">Number Of Beds: {room.numBeds}</p>
-      <p className="booking-info">Cost Per Night: ${room.costPerNight}</p>
-      <button onClick={postBooking(room.id, date, user.id)} className="book-room-btn" id={room.number}>BOOK NOW</button>
+      <p className="booking-info">Room Number: {this.props.room.number}</p>
+      <p className="booking-info">Room Type: {this.props.room.roomType}</p>
+      <p className="booking-info">Has Bidet: {this.props.room.bidet}</p>
+      <p className="booking-info">Bed Size: {this.props.room.bedSize}</p>
+      <p className="booking-info">Number Of Beds: {this.props.room.numBeds}</p>
+      <p className="booking-info">Cost Per Night: ${this.props.room.costPerNight}</p>
+      <button onClick={this.handleEvent} className="book-room-btn" id={this.props.room.number}>BOOK NOW</button>
     </section>
   )
+  }
 }
 export default AvailableRooms

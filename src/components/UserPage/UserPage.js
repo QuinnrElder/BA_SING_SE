@@ -75,16 +75,24 @@ class UserPage extends React.Component {
     return filtered
   }
 
+  changeSearchedState = () => {
+    this.setState({hasSearched: false,})
+  }
+
  displayAvailableRoomsInfo = (availableRooms) => {
     return availableRooms.map(room => {
       return (
-        <AvailableRooms key={Math.floor(Math.random() * 10000000) + 1} room={room} date={this.state.searchInput.date} user={this.state.user}/>
+        <AvailableRooms 
+        key={Math.floor(Math.random() * 10000000) + 1} 
+        changeSearchedState={this.changeSearchedState} 
+        room={room} date={this.state.searchInput.date} 
+        user={this.state.user}
+        updateTotalBookingCount={this.props.updateTotalBookingCount}/>
         ) 
     })
   }
   
   render() {
-    console.log(this.state.user)
     return (
       <div className='user-page' >
         <h3 className='user-page-header'>{ `Welcome ${this.state.user.name}` }</h3>
@@ -92,7 +100,7 @@ class UserPage extends React.Component {
         <CustomerForm getCustomerFormInput={this.getCustomerFormInput}/>
         {this.state.hasSearched && <div className='form-test'>{this.findingRoomsAvailableToday()}</div>}
         </div>
-        <DisplayInfo  user={this.state.user} />
+        <DisplayInfo user={this.state.user} />
       </div>
     )
   }

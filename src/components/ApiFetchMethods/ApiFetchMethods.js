@@ -19,7 +19,10 @@ export const fetchRooms = async () => {
 
 export const postBooking = (room, date, id) => {
   let roomNumbers = parseInt(room)
-  fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
+  console.log(id)
+  console.log(date)
+  console.log(roomNumbers)
+  return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -31,6 +34,8 @@ export const postBooking = (room, date, id) => {
     })
   })
     .then(response => response.json())
-    .then(data => console.log('success', data))
+    .then(data => {
+      return data
+    })
     .catch(err => console.error(err))
 }

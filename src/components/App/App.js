@@ -3,6 +3,8 @@ import './App.css';
 
 import { Route, Switch } from "react-router-dom";
 import { fetchBookings, fetchRooms, fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
+// import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
+
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -20,13 +22,14 @@ class App extends React.Component {
       allBookings: [],
       allRooms: [],
       date: new Date().toLocaleDateString(),
+      totalBooking: 1008,
     }
   }
 
   componentDidMount = async () => {
     const allBookings = await fetchBookings()
     this.setState({ allBookings: [...this.state.allBookings, ...allBookings] })
-    
+    console.log(allBookings.length)
     const allRooms = await fetchRooms()
     this.setState({ allRooms: [...this.state.allRooms, ...allRooms] })
 
@@ -66,8 +69,11 @@ class App extends React.Component {
     return myRooms
   }
 
+  updateTotalBookingCount = () => {
+    this.setState({totalBooking: (this.state.totalBooking + 1)})
+  }
+
   render() {
-    
     return (
       <main className="App">
         <Switch >
@@ -101,6 +107,7 @@ class App extends React.Component {
                   allRooms={this.state.allRooms}
                   allBookings={this.state.allBookings}
                   allUsers={this.state.allUsers}
+                  updateTotalBookingCount={this.updateTotalBookingCount}
                    />
                 </div>
               ) 
