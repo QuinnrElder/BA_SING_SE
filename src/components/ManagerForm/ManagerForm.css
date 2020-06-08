@@ -1,0 +1,36 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid bisque;
+  color: #9ec5ab;
+  background-color: #004643;
+  width: 70%;
+  height: 12vh;
+  margin: 2% 0;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 90%;
+    width: 45%;
+  }
+  
+  .room-labels {
+    font-size: 1.5em;
+  }
+  
+  .input-name {
+    height: 4vh;
+    width: 70%;
+    margin: 0 2%
+  }
+
+  .submit-managers-forms {
+  height: 4vh;
+  width: 30%;
+  }

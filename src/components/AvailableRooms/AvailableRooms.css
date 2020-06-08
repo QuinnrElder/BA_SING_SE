@@ -1,0 +1,15 @@
+.singleBooking {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height:80%;
+  width: 80%;
+  margin: 2% 0;
+  border: 1px solid bisque;
+  background-color: #9ec5ab;
+}
+.booking-info {
+  color: #004643;
+  font-size: 1em;
+  font-weight: 500;
+}

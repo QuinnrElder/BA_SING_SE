@@ -49,15 +49,18 @@ return (
   <div className='display-manager-info'>
 
     <div className='info-container'>
-      <p className='info-title'>{`$ ${getTotalRevenue()}`}</p>
+      <p className='info-title'>Today's Earnings:</p>
+      <p className='info-title'>{` $ ${getTotalRevenue()}`}</p>
     </div>
 
     <div className='info-container'>
-      <p className='info-title'>{`Rooms Available: ${findNumberOfRoomsAvailable()}`}</p>
+      <p className='info-title'>Rooms Available:</p>
+      <p className='info-title'>{findNumberOfRoomsAvailable()}</p>
     </div>
 
     <div className='info-container'>
-<p className='info-title'>{`${findPercentOfAvailableRooms()}%`}</p>
+      <p className='info-title'>Percentage of Rooms:</p>
+      <p className='info-title'>{`${findPercentOfAvailableRooms()}%`}</p>
     </div>
 
   </div>
