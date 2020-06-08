@@ -29,7 +29,7 @@ class CustomerForm extends React.Component {
       <p className='date-helper'>date format 'yyyy/mm/dd'</p>
       <input name='date' onChange={this.handleChange} className='input-name' type='text' placeholder='Search By Date'></input>
       <label className='filter-label'>Filter By Room-Type</label>
-      <select name='filterType' onChange={this.handleChange} className='filter-input' type='text'>
+      <select name='filterType' onChange={this.handleChange} className='filter-input' type='text' placeholder='none'>
         <option>none</option>
         <option>residential suite</option>
         <option>suite</option>
