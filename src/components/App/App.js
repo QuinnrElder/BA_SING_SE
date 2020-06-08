@@ -3,6 +3,8 @@ import './App.css';
 
 import { Route, Switch } from "react-router-dom";
 import { fetchBookings, fetchRooms, fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
+// import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
+
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -66,8 +68,16 @@ class App extends React.Component {
     return myRooms
   }
 
+  // componentDidUpdate = (prevProps) => {
+  //   // console.log('pp', prevProps, 'ps', prevState, 'ss', snapshot)
+  //   if (this.props.allBookings !== prevProps.allBookings) {
+  //     this.fetchData(this.props.userID);
+  //   }
+  //   const postApiBooking = postBooking()
+  //   console.log(postApiBooking)
+  // }
+
   render() {
-    
     return (
       <main className="App">
         <Switch >
