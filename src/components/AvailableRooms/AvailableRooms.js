@@ -9,7 +9,6 @@ class AvailableRooms extends React.Component {
   }
 
   handleEvent = () => {
-    console.log(this.props.date)
     postBooking(this.props.room.number, this.props.date, this.props.user.id)
     this.props.changeSearchedState()
     this.props.updateTotalBookingCount()
