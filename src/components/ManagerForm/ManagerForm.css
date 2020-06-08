@@ -6,8 +6,9 @@
   border: 1px solid bisque;
   color: #9ec5ab;
   background-color: #004643;
-  height: 50%;
-  width: 80%;
+  width: 70%;
+  height: 12vh;
+  margin: 2% 0;
   }
 
   .form {
@@ -25,7 +26,8 @@
   
   .input-name {
     height: 4vh;
-    width: 58%;
+    width: 70%;
+    margin: 0 2%
   }
 
   .submit-managers-forms {
