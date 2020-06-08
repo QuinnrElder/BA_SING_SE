@@ -89,8 +89,6 @@ class ManagerPage extends React.Component {
   }
 
   searchForUser = () => {
-    console.log(typeof this.state.userName)
-
     let newUser = this.props.allUsers.find(user => {
      if(user.name === this.state.userName) {
        console.log(user)
