@@ -84,7 +84,7 @@ class UserPage extends React.Component {
   }
   
   render() {
-    console.log(this.state)
+    console.log(this.state.user)
     return (
       <div className='user-page' >
         <h3 className='user-page-header'>{ `Welcome ${this.state.user.name}` }</h3>
