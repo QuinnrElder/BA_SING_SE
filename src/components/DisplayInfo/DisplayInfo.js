@@ -3,11 +3,10 @@ import './DisplayInfo.css'
 // import PropTypes from 'prop-types'
 
 const DisplayInfo = ({ user }) => {
-  console.log(user)
   const displayBookings = () => {
     return user.userBookings.map(booking => {
       return (
-        <div key={booking.id}className='each-booking-container'>
+        <div key={Math.floor(Math.random() * 10000000) + 1} className='each-booking-container'>
           <p className='booking-text'> Confirmation <span className='insertedText'>{booking.id}</span></p>
           <p className='booking-text'> Room #<span className='insertedText'>{booking.roomNumber}</span></p>
           <p className='booking-text'> Date #<span className='insertedText'>{booking.date}</span></p>
