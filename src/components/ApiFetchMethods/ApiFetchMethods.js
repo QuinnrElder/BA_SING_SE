@@ -19,6 +19,9 @@ export const fetchRooms = async () => {
 
 export const postBooking = (room, date, id) => {
   let roomNumbers = parseInt(room)
+  console.log(id)
+  console.log(date)
+  console.log(roomNumbers)
   return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
     method: 'POST',
     headers: {

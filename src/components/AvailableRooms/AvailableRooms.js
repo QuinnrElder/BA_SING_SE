@@ -5,14 +5,14 @@ import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
 class AvailableRooms extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   handleEvent = () => {
-    postBooking(this.props.room.id, this.props.date, this.props.user.id)
+    console.log(this.props.date)
+    postBooking(this.props.room.number, this.props.date, this.props.user.id)
     this.props.changeSearchedState()
+    this.props.updateTotalBookingCount()
   }
 
   render() {

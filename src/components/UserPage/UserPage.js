@@ -82,7 +82,12 @@ class UserPage extends React.Component {
  displayAvailableRoomsInfo = (availableRooms) => {
     return availableRooms.map(room => {
       return (
-        <AvailableRooms changeSearchedState={this.changeSearchedState} key={Math.floor(Math.random() * 10000000) + 1} room={room} date={this.state.searchInput.date} user={this.state.user}/>
+        <AvailableRooms 
+        key={Math.floor(Math.random() * 10000000) + 1} 
+        changeSearchedState={this.changeSearchedState} 
+        room={room} date={this.state.searchInput.date} 
+        user={this.state.user}
+        updateTotalBookingCount={this.props.updateTotalBookingCount}/>
         ) 
     })
   }

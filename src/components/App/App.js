@@ -22,13 +22,14 @@ class App extends React.Component {
       allBookings: [],
       allRooms: [],
       date: new Date().toLocaleDateString(),
+      totalBooking: 1008,
     }
   }
 
   componentDidMount = async () => {
     const allBookings = await fetchBookings()
     this.setState({ allBookings: [...this.state.allBookings, ...allBookings] })
-    
+    console.log(allBookings.length)
     const allRooms = await fetchRooms()
     this.setState({ allRooms: [...this.state.allRooms, ...allRooms] })
 
@@ -68,14 +69,9 @@ class App extends React.Component {
     return myRooms
   }
 
-  // componentDidUpdate = (prevProps) => {
-  //   // console.log('pp', prevProps, 'ps', prevState, 'ss', snapshot)
-  //   if (this.props.allBookings !== prevProps.allBookings) {
-  //     this.fetchData(this.props.userID);
-  //   }
-  //   const postApiBooking = postBooking()
-  //   console.log(postApiBooking)
-  // }
+  updateTotalBookingCount = () => {
+    this.setState({totalBooking: (this.state.totalBooking + 1)})
+  }
 
   render() {
     return (
@@ -111,6 +107,7 @@ class App extends React.Component {
                   allRooms={this.state.allRooms}
                   allBookings={this.state.allBookings}
                   allUsers={this.state.allUsers}
+                  updateTotalBookingCount={this.updateTotalBookingCount}
                    />
                 </div>
               ) 
