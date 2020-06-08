@@ -2,7 +2,7 @@ import React from 'react'
 import "./Login.css";
 import { Redirect } from 'react-router-dom'
 
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class Login extends React.Component {
   constructor(props) {
@@ -37,6 +37,7 @@ class Login extends React.Component {
   }
 
   updateUser = () => {
+
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
       this.props.getUser({id: 'manager', name: 'manager'})
@@ -53,11 +54,12 @@ class Login extends React.Component {
   }
 
   checkPasswordLetters = () => {
+
     if (this.state.userName.includes('customer') && this.state.password.includes('overlook2020')) {
        let passwordId = this.checkPasswordNumbers()
        return passwordId
       } else {
-        alert('Please use the correct PASSWORD')
+        return 
       }
   }
 
@@ -131,6 +133,11 @@ class Login extends React.Component {
       </div>
     )
   }
+}
+
+Login.propTypes = {
+  getUser: PropTypes.func,
+  allUsers: PropTypes.array
 }
 
 export default Login
