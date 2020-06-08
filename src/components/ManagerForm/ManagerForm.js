@@ -5,7 +5,8 @@ class ManagerForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      userName: ''
+      userName: '',
+      nameError: false,
     }
   }
 
@@ -16,8 +17,11 @@ class ManagerForm extends React.Component {
 
   passFormInput = (event) => {
     event.preventDefault()
-    let userName = this.state.userName
-    this.props.getManagerFormInput(userName)
+    if(this.state.userName !== '') {
+      let userName = this.state.userName
+      this.props.getManagerFormInput(userName)
+    }
+    this.setState({ nameError: true });
   }
 
   render() {
@@ -25,6 +29,7 @@ class ManagerForm extends React.Component {
       <div className='form-container'>
         <p className='room-labels'>Search by Customers Full Name</p>
         <form className='form'>
+        {this.state.nameError && <p className="error-message">Please enter a name.</p>}
         <input 
         name='userName' 
         onChange={this.handleChange} 
