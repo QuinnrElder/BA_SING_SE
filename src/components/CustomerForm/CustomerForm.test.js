@@ -59,4 +59,21 @@ describe("CustomerForm", () => {
     fireEvent.click(search);
     expect(getCustomerFormInput).toHaveBeenCalled();
   })
+
+  it("Should submit the form if it's not been filled out correctly with a filter type", () => {
+    const getCustomerFormInput = jest.fn();
+
+    const { getByText, getByRole } = render (
+      <MemoryRouter>
+        <CustomerForm getCustomerFormInput={getCustomerFormInput} />
+      </MemoryRouter>
+    )
+    
+    const loginBtn = getByRole("button", {name: 'search'});
+    fireEvent.click(loginBtn);
+    
+    const error = getByText('Please enter a date.')
+    expect(error).toBeInTheDocument();
+
+  })
 })
