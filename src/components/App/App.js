@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Route, Switch } from "react-router-dom";
-import { fetchBookings, fetchRooms, } from '../ApiFetchMethods/ApiFetchMethods'
+import { fetchBookings, fetchRooms, fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -30,28 +30,32 @@ class App extends React.Component {
     const allRooms = await fetchRooms()
     this.setState({ allRooms: [...this.state.allRooms, ...allRooms] })
 
+    const users = await fetchUsers()
+
+    let newArrayOfUsers = users.map(user => {
+      const userBookings = allBookings.filter(booking => booking.userID === user.id)
+      const roomsStayedIn = this.findRoomStayedIn(userBookings, allRooms)
+      let newUser = {
+        id: user.id, 
+        name: user.name, 
+        userBookings: userBookings,
+        roomsStayedIn: roomsStayedIn,
+      }
+      return newUser
+  })
+   this.setState({ allUsers: newArrayOfUsers })
   }
 
   getUser = (user) => {
   if(user.name === 'manager') {
     this.setState({ user: { name:'manager', id: user.id, userBookings: [], roomsStayedIn: [] } })
-    this.setState({ allUsers: [...user.allUsers] })
-  } else {
-    const userBookings = this.state.allBookings.filter(booking => booking.userID === user.id)
-    const roomsStayedIn = this.findRoomStayedIn(userBookings)
-    this.setState({ user: {
-      id: user.id, 
-      name: user.name, 
-      userBookings: userBookings, 
-      roomsStayedIn: roomsStayedIn
-      } 
-    })
-    this.setState({ allUsers: [...user.allUsers] })
+  } else {    
+    this.setState({ user: {...user}})
   }
   }
 
-  findRoomStayedIn = (userBookings) => {
-    let myRooms = this.state.allRooms.reduce((acc, room) => {
+  findRoomStayedIn = (userBookings, allRooms) => {
+    let myRooms = allRooms.reduce((acc, room) => {
       userBookings.forEach(booking => {
         if (booking.roomNumber === room.number) {
           acc.push(room)
@@ -63,6 +67,7 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
       <main className="App">
         <Switch >
@@ -95,6 +100,7 @@ class App extends React.Component {
                   date={this.state.date}
                   allRooms={this.state.allRooms}
                   allBookings={this.state.allBookings}
+                  allUsers={this.state.allUsers}
                    />
                 </div>
               ) 
@@ -105,7 +111,7 @@ class App extends React.Component {
             path="/"
             exact
             render={() => {
-              return <Login getUser={this.getUser}/>
+              return <Login getUser={this.getUser} allUsers={this.state.allUsers}/>
             }}
           />
         </Switch>

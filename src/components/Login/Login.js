@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Login.css";
 import { Redirect } from 'react-router-dom'
-import { fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
 
 // import PropTypes from 'prop-types'
 
@@ -9,7 +8,6 @@ class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      allUsers: [],
       userName: '',
       password: '',
       userNameError: false,
@@ -17,11 +15,6 @@ class Login extends React.Component {
       completedFormManager: false,
       completedFormUser: false,
     }
-  }
-
-  componentDidMount = async () => {
-    const users = await fetchUsers()
-    this.setState({ allUsers: users})
   }
 
   handleChange = (event) => {
@@ -46,11 +39,11 @@ class Login extends React.Component {
   updateUser = () => {
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
-      this.props.getUser({id: 'manager', name: 'manager', allUsers: this.state.allUsers})
+      this.props.getUser({id: 'manager', name: 'manager'})
     } else {
       let currentUser = this.checkUserNameAndPassword()
-        this.setState({ completedFormUser: true });
-        this.props.getUser({...currentUser, allUsers: this.state.allUsers})
+      this.setState({ completedFormUser: true });
+      this.props.getUser(currentUser)
       }
   }
 
@@ -90,7 +83,8 @@ class Login extends React.Component {
   }
 
   checkPassword = (passwordId) => {
-    let correctUser = this.state.allUsers.find(user => user.id === passwordId)
+    let correctUser = this.props.allUsers.find(user => user.id === passwordId)
+    console.log(correctUser)
     return correctUser
   }
 
