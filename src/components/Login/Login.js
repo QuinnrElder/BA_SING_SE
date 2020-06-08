@@ -84,7 +84,6 @@ class Login extends React.Component {
 
   checkPassword = (passwordId) => {
     let correctUser = this.props.allUsers.find(user => user.id === passwordId)
-    console.log(correctUser)
     return correctUser
   }
 
