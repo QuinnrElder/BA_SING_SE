@@ -92,7 +92,7 @@ class Login extends React.Component {
       <div className='login-container'>
       { this.state.completedFormManager && <Redirect to='/manager' />}
         <div className='login-form-container'>
-          <form className='login-form'>
+          <form className='login-form' name='login-form'>
           <label className='welcome-text'>Welcome</label>
             <input
                 className='username-input'
@@ -132,9 +132,5 @@ class Login extends React.Component {
     )
   }
 }
-
-// Login.propTypes = {
-//   getUser: PropTypes.func
-// }
 
 export default Login
