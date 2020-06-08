@@ -30,6 +30,7 @@ class ManagerForm extends React.Component {
         onChange={this.handleChange} 
         className='input-name' type='text' 
         placeholder='Search By Full Name'
+        aria-label="username-label"
         ></input>
         <button 
         className='submit-managers-forms'
