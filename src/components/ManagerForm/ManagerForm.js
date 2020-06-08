@@ -14,10 +14,10 @@ class ManagerForm extends React.Component {
     this.setState({ [name]: value });
   }
 
-  passInput = (event) => {
+  passFormInput = (event) => {
     event.preventDefault()
     let userName = this.state.userName
-    this.props.getCustomerFormInput(userName)
+    this.props.getManagerFormInput(userName)
   }
 
   render() {
@@ -33,7 +33,7 @@ class ManagerForm extends React.Component {
         ></input>
         <button 
         className='submit-managers-forms'
-        onClick={this.passInput}>search</button>
+        onClick={this.passFormInput}>search</button>
       </form>
       </div> 
     )
