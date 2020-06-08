@@ -91,7 +91,6 @@ class ManagerPage extends React.Component {
   searchForUser = () => {
     let newUser = this.props.allUsers.find(user => {
      if(user.name === this.state.userName) {
-       console.log(user)
        return user
      }
     })
@@ -108,10 +107,10 @@ class ManagerPage extends React.Component {
 
   render() {
     return (
-      <div className='manager-page'>
-        <div className='main-form'>
+      <div className='manager-page' id='managerContainer'>
+        <div className='main-form' id='main-form-wrapper'>
         <ManagerForm getManagerFormInput={this.getManagerFormInput}/>
-        {this.state.hasBeenSearched && <div className='form-test'>{this.searchForUser()}</div>}
+        {this.state.hasBeenSearched && <div className='form-test' id='form-test-wrapper'>{this.searchForUser()}</div>}
         </div>
         <ManagerDisplay user={this.props.user} allUsers={this.props.allUsers} allRooms={this.props.allRooms} allBookings={this.props.allBookings} date={this.props.date} />
       </div>
