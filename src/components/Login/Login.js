@@ -24,7 +24,7 @@ class Login extends React.Component {
 
   //some method that checks to see if you've filled everything out
   checkForErrors = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     this.setState({ userNameError: false, userPasswordError: false})
     
     if (!this.state.userName) {
@@ -33,15 +33,11 @@ class Login extends React.Component {
     if (!this.state.password) {
       this.setState({ userPasswordError: true });
     }
-    this.updateUser();
-  }
-
-  updateUser = () => {
 
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
       this.props.getUser({id: 'manager', name: 'manager'})
-    } else {
+    } else if(this.state.userName.includes('customer')) {
       let currentUser = this.checkUserNameAndPassword()
       this.setState({ completedFormUser: true });
       this.props.getUser(currentUser)
@@ -54,8 +50,7 @@ class Login extends React.Component {
   }
 
   checkPasswordLetters = () => {
-
-    if (this.state.userName.includes('customer') && this.state.password.includes('overlook2020')) {
+    if (this.state.userName.includes('customer') && this.state.password === 'overlook2020') {
        let passwordId = this.checkPasswordNumbers()
        return passwordId
       } else {
@@ -125,7 +120,7 @@ class Login extends React.Component {
             <button
                 className="login-button"
                 type="submit"
-                onClick={(event) => this.checkForErrors(event)}
+                onClick={this.checkForErrors}
             >Login</button>
           </form>
         </div>
