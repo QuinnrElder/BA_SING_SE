@@ -10,8 +10,8 @@ describe('Login', () => {
 
     let getUser = jest.fn()
     let allUsers =[
-      {"id":1,
-      "name":"Leatha Ullrich",
+      {id: 10,
+      name: "Leatha Ullrich",
       userBookings: [{
         date: "2020/02/08",
         id: "5fwrgu4i7k55hl6tg",
@@ -40,69 +40,7 @@ describe('Login', () => {
         number: 17,
         roomType: "single room",
       }],
-    },
-      {"id":2,
-      "name":"Rocio Schuster",
-      userBookings: [{
-        date: "2020/02/05",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/04",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
-      {"id":34,
-      "name":"Ardella Jakubowski",
-      userBookings: [{
-        date: "2020/02/03",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/02",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
+    }
     ]
 
     const { getByText, getByRole } = render(
@@ -123,8 +61,8 @@ describe('Login', () => {
   it("should throw an error if the form is not filled out correctly", () => {
     let getUser = jest.fn()
     let allUsers =[
-      {"id":1,
-      "name":"Leatha Ullrich",
+      {id: 10,
+      name: "Leatha Ullrich",
       userBookings: [{
         date: "2020/02/08",
         id: "5fwrgu4i7k55hl6tg",
@@ -153,69 +91,7 @@ describe('Login', () => {
         number: 17,
         roomType: "single room",
       }],
-    },
-      {"id":2,
-      "name":"Rocio Schuster",
-      userBookings: [{
-        date: "2020/02/05",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/04",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
-      {"id":34,
-      "name":"Ardella Jakubowski",
-      userBookings: [{
-        date: "2020/02/03",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/02",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
+    }
     ]
 
     const { getByText } = render (
@@ -236,8 +112,8 @@ describe('Login', () => {
   it("Should call setState for app if filled out correctly", () => {
     let getUser = jest.fn()
     let allUsers =[
-      {"id":1,
-      "name":"Leatha Ullrich",
+      {id: 10,
+      name: "Leatha Ullrich",
       userBookings: [{
         date: "2020/02/08",
         id: "5fwrgu4i7k55hl6tg",
@@ -266,80 +142,17 @@ describe('Login', () => {
         number: 17,
         roomType: "single room",
       }],
-    },
-      {"id":2,
-      "name":"Rocio Schuster",
-      userBookings: [{
-        date: "2020/02/05",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/04",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
-      {"id":34,
-      "name":"Ardella Jakubowski",
-      userBookings: [{
-        date: "2020/02/03",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      },
-      {
-        date: "2020/02/02",
-        id: "5fwrgu4i7k55hl6tg",
-        roomNumber: 17,
-        roomServiceCharges: [],
-      }],
-      roomsStayedIn: [{
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      },
-      {
-        bedSize: "queen",
-        bidet: true,
-        costPerNight: 305.85,
-        numBeds: 1,
-        number: 17,
-        roomType: "single room",
-      }],
-    },
+    }
     ]
 
     const { getByText, getByPlaceholderText } = render (
-      <MemoryRouter>
+      <MemoryRouter >
         <Login getUser={getUser} allUsers={allUsers} />
       </MemoryRouter>
     )
-
     
     fireEvent.change(getByPlaceholderText("username"), {
-      target: { value: "customer34" },
+      target: { value: "customer10" },
     });
     fireEvent.change(getByPlaceholderText("password"), {
       target: { value: "overlook2020" },
@@ -348,7 +161,38 @@ describe('Login', () => {
     const loginBtn = getByText("Login");
     fireEvent.click(loginBtn);
 
-    expect(getUser).toHaveBeenCalled();
+    expect(getUser).toHaveBeenCalledWith({
+      id: 10,
+      name: "Leatha Ullrich",
+      userBookings: [{
+        date: "2020/02/08",
+        id: "5fwrgu4i7k55hl6tg",
+        roomNumber: 17,
+        roomServiceCharges: [],
+      },
+      {
+        date: "2020/02/07",
+        id: "5fwrgu4i7k55hl6tg",
+        roomNumber: 17,
+        roomServiceCharges: [],
+      }],
+      roomsStayedIn: [{
+        bedSize: "queen",
+        bidet: true,
+        costPerNight: 305.85,
+        numBeds: 1,
+        number: 17,
+        roomType: "single room",
+      },
+      {
+        bedSize: "queen",
+        bidet: true,
+        costPerNight: 305.85,
+        numBeds: 1,
+        number: 17,
+        roomType: "single room",
+      }],
+    }
+)
   });
-
 })
