@@ -50,7 +50,7 @@ return (
 
     <div className='info-container'>
       <p className='info-title'>Today's Earnings:</p>
-      <p className='info-title'>{` $ ${getTotalRevenue()}`}</p>
+      <p className='info-title'>{` $${getTotalRevenue()}`}</p>
     </div>
 
     <div className='info-container'>

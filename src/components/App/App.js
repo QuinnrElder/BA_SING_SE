@@ -3,8 +3,6 @@ import './App.css';
 
 import { Route, Switch } from "react-router-dom";
 import { fetchBookings, fetchRooms, fetchUsers } from '../ApiFetchMethods/ApiFetchMethods'
-// import { postBooking } from '../ApiFetchMethods/ApiFetchMethods'
-
 
 import Login from '../Login/Login';
 import UserPage from '../UserPage/UserPage';
@@ -29,14 +27,14 @@ class App extends React.Component {
   componentDidMount = async () => {
     const allBookings = await fetchBookings()
     this.setState({ allBookings: [...this.state.allBookings, ...allBookings] })
-    console.log(allBookings.length)
+
     const allRooms = await fetchRooms()
     this.setState({ allRooms: [...this.state.allRooms, ...allRooms] })
 
     const users = await fetchUsers()
 
     let newArrayOfUsers = users.map(user => {
-      const userBookings = allBookings.filter(booking => booking.userID === user.id)
+      const userBookings = this.state.allBookings.filter(booking => booking.userID === user.id)
       const roomsStayedIn = this.findRoomStayedIn(userBookings, allRooms)
       let newUser = {
         id: user.id, 

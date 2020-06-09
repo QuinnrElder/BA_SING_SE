@@ -2,7 +2,7 @@ import React from 'react'
 import "./Login.css";
 import { Redirect } from 'react-router-dom'
 
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Login extends React.Component {
 
   //some method that checks to see if you've filled everything out
   checkForErrors = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     this.setState({ userNameError: false, userPasswordError: false})
     
     if (!this.state.userName) {
@@ -33,14 +33,11 @@ class Login extends React.Component {
     if (!this.state.password) {
       this.setState({ userPasswordError: true });
     }
-    this.updateUser();
-  }
 
-  updateUser = () => {
     if (this.state.userName === "manager" && this.state.password === "overlook2020") {
       this.setState({ completedFormManager: true });
       this.props.getUser({id: 'manager', name: 'manager'})
-    } else {
+    } else if(this.state.userName.includes('customer')) {
       let currentUser = this.checkUserNameAndPassword()
       this.setState({ completedFormUser: true });
       this.props.getUser(currentUser)
@@ -53,11 +50,11 @@ class Login extends React.Component {
   }
 
   checkPasswordLetters = () => {
-    if (this.state.userName.includes('customer') && this.state.password.includes('overlook2020')) {
+    if (this.state.userName.includes('customer') && this.state.password === 'overlook2020') {
        let passwordId = this.checkPasswordNumbers()
        return passwordId
       } else {
-        alert('Please use the correct PASSWORD')
+        return 
       }
   }
 
@@ -65,14 +62,18 @@ class Login extends React.Component {
     let id1;
     let username = this.state.userName
     username = username.split('')
+ 
     let two = username[username.length - 2]
     let indexMinusTwo = parseInt(two)
+
     let one = username[username.length - 1]
     let indexMinusOne = parseInt(one)
-    if (typeof indexMinusTwo === "number") {
+
+    if (indexMinusTwo) {
       id1 = username[username.length - 2] + username[username.length - 1]
       id1 = parseInt(id1)
       return id1
+
     } else if (typeof indexMinusOne === 'number') {
       id1 = (username[username.length - 1])
       id1 = parseInt(id1)
@@ -92,7 +93,7 @@ class Login extends React.Component {
       <div className='login-container'>
       { this.state.completedFormManager && <Redirect to='/manager' />}
         <div className='login-form-container'>
-          <form className='login-form'>
+          <form className='login-form' name='login-form'>
           <label className='welcome-text'>Welcome</label>
             <input
                 className='username-input'
@@ -123,7 +124,7 @@ class Login extends React.Component {
             <button
                 className="login-button"
                 type="submit"
-                onClick={(event) => this.checkForErrors(event)}
+                onClick={this.checkForErrors}
             >Login</button>
           </form>
         </div>
@@ -133,8 +134,9 @@ class Login extends React.Component {
   }
 }
 
-// Login.propTypes = {
-//   getUser: PropTypes.func
-// }
+Login.propTypes = {
+  getUser: PropTypes.func,
+  allUsers: PropTypes.array
+}
 
 export default Login
