@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  - Then run ```npm start``` and open http://localhost:3000/ to see the site!
  - To view tests:  In the terminal, run ```npm start``` to view testing suite
  - To Login:
-    - As Manager: ( username: manager // password: overlook2020 )
-    -As a Customer: username: ( customer50 (where 50 is the ID of the user) // password: overlook2020 )
+    * As Manager: ( username: manager // password: overlook2020 )
+    * As a Customer: username: ( customer50 (where 50 is the ID of the user) // password: overlook2020 )
     
     
 ![Screen Shot 2020-06-09 at 4 56 10 PM](https://user-images.githubusercontent.com/49104801/84209503-8eaec200-aa73-11ea-99c6-e78ca59adaa6.png)
@@ -47,4 +47,4 @@ A React-app built with JavaScript, that utilizes fetching API dataSets to allow 
   - Having a manger be able to delete a booking of a room for a customer
 ## Wins
 This was a fun project with many different components and topics that all came together! I am most happy with my testing library and never giving up when things didnt work out the first try or 20th! My primary goal of the project was to gain a deeper understanding of the React Testing Library while trying to take a new approach to an old idea.
-[Quinn Elder](https://github.com/QuinnrElder/BA_SING_SE)
+[Quinn Elder GITHUB](https://github.com/QuinnrElder)
