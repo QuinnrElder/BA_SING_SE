@@ -10,12 +10,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  To Login:
     - As Manager: ( username: manager // password: overlook2020 )
     -As a Customer: username: ( customer50 (where 50 is the ID of the user) // password: overlook2020 )
+    
+    
 ![Screen Shot 2020-06-09 at 4 56 10 PM](https://user-images.githubusercontent.com/49104801/84209503-8eaec200-aa73-11ea-99c6-e78ca59adaa6.png)
+
+
  ## Functionality
 A React-app built with JavaScript, that utilizes fetching API dataSets to allow a customer or manager to check into their own booking page of the BA-SING-SE APP. Once logged in the customer or manager should see the appropriate page and data needed to navigate the site, search by date and names. make hotel a booking.
+
 ![Screen Shot 2020-06-09 at 5 07 17 PM](https://user-images.githubusercontent.com/49104801/84209597-c9b0f580-aa73-11ea-90f6-12cc2819c6b2.png)
+
 ![Screen Shot 2020-06-09 at 5 07 29 PM](https://user-images.githubusercontent.com/49104801/84209636-dc2b2f00-aa73-11ea-9834-7ae591991f66.png)
+
 ![Screen Shot 2020-06-09 at 5 07 42 PM](https://user-images.githubusercontent.com/49104801/84209656-e8af8780-aa73-11ea-8fea-b7a667007828.png)
+
  ### Technologies Used
 * React
 * React Router
@@ -31,7 +39,6 @@ A React-app built with JavaScript, that utilizes fetching API dataSets to allow 
 * Multiple fetch calls
 * Asynchronous testing and mocking fetch calls
 * Data Restructuring
-![Screen Shot 2020-06-09 at 4 56 10 PM](https://user-images.githubusercontent.com/49104801/84209768-39bf7b80-aa74-11ea-97df-5f9d0a6190bc.png)
 ## Challenges
 * Multiple components needed to adhere to the single responsibility principle. While others we soly rendered on conditions.
 * Asynchronous testing with multiple fetch calls on different components. It took awhile to understand the intricacies of the React Testing Library and I feel much stronger about testing!
