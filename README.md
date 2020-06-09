@@ -3,11 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # A Little Getaway for Kitty-Loving Cheesy Beer Dads:
   Final Project for Module 3 of Turing School of Software and Design
 ## Installation
- To access this project, simply clone down this repo and run
- ```npm install```
- Then run ```npm start``` and open http://localhost:3000/ to see the site!
- To view tests:  In the terminal, run ```npm start``` to view testing suite
- To Login:
+ - To access this project, simply clone down this repo and run ```npm install```
+ - Then run ```npm start``` and open http://localhost:3000/ to see the site!
+ - To view tests:  In the terminal, run ```npm start``` to view testing suite
+ - To Login:
     - As Manager: ( username: manager // password: overlook2020 )
     -As a Customer: username: ( customer50 (where 50 is the ID of the user) // password: overlook2020 )
     
