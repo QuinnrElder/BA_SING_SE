@@ -26,17 +26,14 @@ class UserPage extends React.Component {
   }
 
   findingRoomsAvailableToday = () => {
-    console.log(this.state.searchInput.filterType)
     if (this.state.searchInput.filterType === '') {
       let bookingNums = this.getAllRoomNumbersBookedToday()
       let availableRooms = this.findAvailableRoomNumbers(bookingNums)
-      console.log(availableRooms)
       return this.displayAvailableRoomsInfo(availableRooms)
     } else {
       let bookingNums = this.getAllRoomNumbersBookedToday()
       let availableRooms = this.findAvailableRoomNumbers(bookingNums)
       let displayFilteredRoomType = this.findFilteredRoomType(availableRooms)
-      console.log(displayFilteredRoomType)
       return this.displayAvailableRoomsInfo(displayFilteredRoomType)
     }
   }
