@@ -1,6 +1,6 @@
 import React from "react";
 import App from "./App";
-import { MemoryRouter, BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import {
@@ -125,7 +125,7 @@ describe("App as user", () => {
   })
 
   it("Should display the loginPage page", () => {
-    const { getByText, getByRole, debug } = render(
+    const { getByText, getByRole} = render(
       <MemoryRouter>
         <App />
       </MemoryRouter>
@@ -221,7 +221,7 @@ describe("App as user", () => {
   });
 
   it("Should be able to book a room based off date searched", async () => {
-    const { getByRole, getByText, getByPlaceholderText, getByTestId } = render(
+    const { getByText, getByPlaceholderText, getByTestId } = render(
       <MemoryRouter>
         <App />
       </MemoryRouter>
@@ -255,6 +255,45 @@ describe("App as user", () => {
     fireEvent.click(button)
 
     expect(button).not.toBeInTheDocument();
+
+  });
+
+  it("Should be able to see the room booked based off date searched", async () => {
+    const { getByText, getByPlaceholderText, getByTestId, getAllByTestId } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    fireEvent.change(getByPlaceholderText("username"), {
+      target: { value: "customer34" },
+    });
+    fireEvent.change(getByPlaceholderText("password"), {
+      target: { value: "overlook2020" },
+    });
+
+    const loginBtn = getByText("Login");
+    await new Promise((r) => setTimeout(r, 2000));
+    fireEvent.click(loginBtn);
+    
+    // // this is the Customer form check...
+    let username = getByPlaceholderText("Search By Date")
+    fireEvent.change(username, {
+      target: { value: "2020/06/08" },
+    });
+    let filter = getByPlaceholderText("none")
+    fireEvent.change(filter, {
+      target: { value: "single room" },
+    });
+
+    let submit = getByText('search')
+    fireEvent.click(submit);
+
+    const button = getByTestId('3')
+    fireEvent.click(button)
+
+    const booking = getAllByTestId('bookings-display');
+    expect(booking).toHaveLength(1);
 
   });
 

@@ -62,14 +62,18 @@ class Login extends React.Component {
     let id1;
     let username = this.state.userName
     username = username.split('')
+ 
     let two = username[username.length - 2]
     let indexMinusTwo = parseInt(two)
+
     let one = username[username.length - 1]
     let indexMinusOne = parseInt(one)
-    if (typeof indexMinusTwo === "number") {
+
+    if (indexMinusTwo) {
       id1 = username[username.length - 2] + username[username.length - 1]
       id1 = parseInt(id1)
       return id1
+
     } else if (typeof indexMinusOne === 'number') {
       id1 = (username[username.length - 1])
       id1 = parseInt(id1)
