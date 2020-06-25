@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# A Little Getaway for Kitty-Loving Cheesy Beer Dads:
+# BA_SING_SE:
   Final Project for Module 3 of Turing School of Software and Design
 ## Installation
  - To access this project, simply clone down this repo and run ```npm install```
